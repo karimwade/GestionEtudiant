@@ -1,0 +1,25 @@
+
+{% extends 'layouts/base_etudiant.html' %}
+{% block content_etudiant_app %}
+    <h1>#Liste des semestres </h1><br>
+
+    <a href="{% url 'createSemestre' %}" class="btn btn-primary mb-2">Ajouter un semestre</a>
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+                {% if semestre %}
+                <ul class="list-group list-group-flush">
+                    {% for semestre in semestre %}
+                        <li class="list-group-item">
+                            <a href="{% url 'showSemestre' id=semestre.id %}">{{ semestre.nomSemestre}}</a>
+                        </li>
+                     {% endfor %}
+                </ul>
+                {% else %}
+                    <p class="alert alert-info">Aucun semestre n'est enrégistrée ! </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

@@ -1,0 +1,26 @@
+{% extends 'layouts/base_etudiant.html' %}
+
+
+{% block content_etudiant_app %}
+    <h1>#Liste des évaluations </h1><br>
+
+    <a href="{% url 'createEvaluation' %}" class="btn btn-primary mb-2">Ajouter une évaluation</a>
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+                {% if evaluation %}
+                <ul class="list-group list-group-flush">
+                    {% for evaluation in evaluation %}
+                        <li class="list-group-item">
+                            <a href="{% url 'showEvaluation' id=evaluation.id %}">{{ evaluation.nomEvaluation }} {{ evaluation.typeEvaluation }} </a>
+                        </li>
+                     {% endfor %}
+                </ul>
+                {% else %}
+                    <p class="alert alert-info">Aucune évaluation n'est enrégistrée ! </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

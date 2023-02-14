@@ -1,0 +1,97 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,600&display=swap'); */
+
+body
+{
+    font-family: 'Open Sans', Helvetica,Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Pour tous les elements (balises) */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Permet de centrer le contenu */
+/* il donne une largeur de 1440px sil ne p pas il donne une largeur de 90% */
+.wrapper
+{
+    width: 1440px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Permet de centrer un texte */
+.text-center{
+    text-align: center;
+}
+
+/* Le menu  */
+.menu
+{
+    background-color: black;
+    border-top: 4px solid #1ce;
+    /* 1em en haut et en bas, 0 à gauche et à droite */
+    padding: 1em 0;
+}
+
+.menu_title
+{ 
+    font-size: 1.8em;
+    color: #fff;
+}
+
+.menu_title:hover
+{
+    font-size: 1.8em;
+    color: #1ce;
+}
+
+
+.menu .menu-right
+{
+    float: right;
+}
+
+.menu .menu-right li
+{
+    display: inline-block;
+    list-style: none;
+    margin-top: 0.3em;
+    margin-right: 0.8em;
+}
+
+/* Pour le dernier element, y'aura pas de margin-right */
+.menu .menu-right li:last-child
+{
+    margin-right: 0;
+}
+
+/* Changer la couleur des liens */
+.menu .menu-right li a
+{
+    color: #fff;
+}
+
+/* Lorsqu'on survole, on change la coulor en bleu */
+.menu .menu-right li a:hover
+{
+    color: #1ce;
+}
+
+.footer
+{
+    margin-top: 3em;
+    color: rgba(0, 0, 0,6);
+}
+
+/* le trait avant le footer */
+.footer::before
+{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 10%;
+    margin: 0.5em auto;
+    background-color: #1ce;
+}

@@ -1,0 +1,27 @@
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block title %} Modifier Semestre{% endblock title %}
+
+{% block content_etudiant_app %}
+    <h1>#Modifier un semestre </h1>
+
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+               <form method="POST">
+                {% csrf_token %}
+
+
+                <div class="row">
+                    <div class="form-group  col-lg-6">
+                        <label for="nomSemestre">Nom Semestre</label>
+                        <input type="text" class="form-control"  value="{{ semestre.nomSemestre}}" name="nomSemestre">
+                    </div>
+
+                <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

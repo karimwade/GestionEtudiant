@@ -1,0 +1,40 @@
+
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block content_etudiant_app %}
+    <h1>#Créer une évaluation </h1>
+
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+               <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+
+                    <div class="form-group col-lg-6">
+                        <label for="nomEvaluation">Nom Evaluation</label>
+                        <input type="text" id="nomEvaluation" class="form-control" name="nomEvaluation">
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="typeEvaluation">Type Evaluation</label>
+                        <input type="text"  id="typeEvaluation" class="form-control" name="typeEvaluation">
+                    </div>
+
+
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <label for="DateEvaluation">Date Evaluation</label>
+                        <input type="date"   id="DateEvaluation"  class="form-control" name="DateEvaluation">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

@@ -1,0 +1,28 @@
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block title %} Supprimer Etudiant{% endblock title %}
+
+{% block content_etudiant_app %} 
+    <h1>#Suppression... </h1>
+
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+               <form method="POST">
+                {% csrf_token %}
+                    <div class="alert alert-danger" role="alert">
+                    Voulez vous bien supprimer cet etudiant {{ etudiant  }}
+                    </div>
+                    <button class="btn btn-danger" type="submit">Oui</button> 
+                    <a href="{% url 'etudiants'  %}" class="btn btn-info">Non</a>   
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}
+
+
+{% comment %} 
+La var etudiant de cette page va afficher le prenom et le nom comme on la definie dans la methede __self__ de models.py
+ {% endcomment %}

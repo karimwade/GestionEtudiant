@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block stylesheet_etudiant_app %}
+    <link rel="stylesheet"  type="text/css" href="{% static 'css/styleEtudiant.css' %}">
+    <script src="https://kit.fontawesome.com/c5eaf472dd.js" crossorigin="anonymous"></script>
+{% endblock stylesheet_etudiant_app %}
+
+{% block content %}
+    {% block content_etudiant_app %} {% endblock content_etudiant_app %}
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}
+ 

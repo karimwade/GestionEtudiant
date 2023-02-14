@@ -1,0 +1,25 @@
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block content_etudiant_app %}
+    <h1>#Liste des matieres </h1><br>
+
+    <a href="{% url 'createMatiere' %}" class="btn btn-primary mb-2">Ajouter une matiere</a>
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+                {% if matiere %}
+                <ul class="list-group list-group-flush">
+                    {% for matiere in matiere %}
+                        <li class="list-group-item">
+                            <a href="{% url 'showMatiere' id=matiere.id %}">{{ matiere.nomMatiere }} {{ matiere.volumeHoraire }} </a>
+                        </li>
+                     {% endfor %}
+                </ul>
+                {% else %}
+                    <p class="alert alert-info">Aucun matiere n'est enrégistré ! </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

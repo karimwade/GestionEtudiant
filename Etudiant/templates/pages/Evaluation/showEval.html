@@ -1,0 +1,35 @@
+
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block title %} Evaluation{% endblock title %}
+
+{% block content_etudiant_app %}
+    <h1>#Matiere </h1>
+
+    <div class="row">
+        <div class="col-md m-auto">
+            <h2 class="nomEvaluation"><i class="fas fa-user-tie"></i> {{ evaluation.nomEvaluation }} {{ evaluation.typeEvaluation }} </h2>
+            <div class="card card-body">
+                <ul class="list-group list-group-flush">
+                     <li class="list-group-item">
+                       Evaluation : {{ evaluation.nomEvaluation }}
+                    </li>
+
+                    <li class="list-group-item">
+                       typeEvaluation : {{ evaluation.typeEvaluation }}
+                    </li>
+
+                    <li class="list-group-item">
+                       DateEvaluation : {{ evaluation.DateEvaluation }}
+                    </li>
+                </ul>
+                <div class="form-group form-inline">
+                    <a href="{% url 'editEvaluation' evaluation.id %}" class="btn btn-primary mb-2 mt-4">Modifier l'evaluation</a>
+                    <a href="{% url 'deleteEvaluation' evaluation.id %}" class="btn btn-danger  mb-2 mt-4 ml-1">Supprimer l'evaluation</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

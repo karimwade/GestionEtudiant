@@ -1,0 +1,72 @@
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block title %} Create Etudiant{% endblock title %}
+
+{% block content_etudiant_app %} 
+    <h1>#Créer un etudiant </h1>
+
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+               <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="Nom">Matricule</label>
+                        <input type="text" class="form-control" name="matricule">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" class="form-control" name="nom">
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" class="form-control" name="prenom">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label for="classe">Classe</label>
+                        <input type="text" id="classe" class="form-control" name="classe">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="sexe">Sexe</label>
+                        <select class="form-control" name="sexe">
+                            <option value="Masculin">Masculin</option>
+                            <option value="Feminin">Feminin</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label for="nationalite">Nationalité</label>
+                        <select  class="form-control" name="nationalite">
+                            <option value="Sénégalaise">Sénégalaise</option>
+                            <option value="Malienne">Malienne</option>
+                            <option value="Congolaise">Congolaise</option>
+                            <option value="Comorienne">Comorienne</option>
+                            <option value="Guinéenne">Guinéenne</option>
+                            <option value="Ivoirienne">Ivoirienne</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <label for="moyenne">Moyenne</label>
+                        <input type="text" id="moyenne" value="0" min="1" max="20" class="form-control" name="moyenne">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Inscrire</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

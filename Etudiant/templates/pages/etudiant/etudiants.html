@@ -1,0 +1,27 @@
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block title %} Etudiants{% endblock title %}
+
+{% block content_etudiant_app %} 
+    <h1>#Liste des etudiants </h1><br>
+    
+    <a href="{% url 'createEtudiant' %}" class="btn btn-primary mb-2">Ajouter un etudiant</a>
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+                {% if etudiants %}
+                <ul class="list-group list-group-flush">
+                    {% for etudiant in etudiants %}
+                        <li class="list-group-item">
+                            <a href="{% url 'show' id=etudiant.id %}">{{ etudiant.prenom }} {{ etudiant.nom }} </a>
+                        </li>
+                     {% endfor %}
+                </ul>
+                {% else %}
+                    <p class="alert alert-info">Aucun etudiant n'est enrégistré ! </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

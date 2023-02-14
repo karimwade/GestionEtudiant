@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block titre %}Gestion des contacts{% endblock titre %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
+    <link rel="stylesheet" href="  {% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    {% block stylesheet_etudiant_app %}{% endblock stylesheet_etudiant_app %}
+</head>
+<body>
+    {% include 'layouts/partials/menu.html' %}
+    <div class='container'>
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+</html>

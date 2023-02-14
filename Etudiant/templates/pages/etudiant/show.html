@@ -1,0 +1,40 @@
+{% extends 'layouts/base_etudiant.html' %}
+
+{% block title %} Etudiants{% endblock title %}
+
+{% block content_etudiant_app %} 
+    <h1>#etudiant </h1>
+
+    <div class="row">
+        <div class="col-md m-auto">
+            <h2 class="nomEtudiant"><i class="fas fa-user-tie"></i> {{ etudiant.prenom }} {{ etudiant.nom }} </h2>
+            <div class="card card-body">
+                <ul class="list-group list-group-flush">
+                     <li class="list-group-item">
+                       Matricule : {{ etudiant.matricule }}
+                    </li>
+                    <li class="list-group-item">
+                       Classe : {{ etudiant.classe }}
+                    </li>
+
+                     <li class="list-group-item">
+                       Sexe : {{ etudiant.sexe }}
+                    </li>
+
+                    <li class="list-group-item">
+                       Nationalité : {{ etudiant.nationalite }}
+                    </li>
+
+                    <li class="list-group-item">
+                       Moyenne : {{ etudiant.moyenne|default_if_none:"Pas encore de moyenne ! " }}
+                    </li>
+                </ul>
+                <div class="form-group form-inline">
+                    <a href="{% url 'editEtudiant' etudiant.id %}" class="btn btn-primary mb-2 mt-4">Modifier l'etudiant</a>
+                    <a href="{% url 'deleteEtudiant' etudiant.id %}" class="btn btn-danger  mb-2 mt-4 ml-1">Supprimer l'etudiant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}

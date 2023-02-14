@@ -1,0 +1,27 @@
+{% extends 'layouts/base_etudiant.html' %}
+{% block title %} Supprimer Matiere{% endblock title %}
+
+{% block content_etudiant_app %}
+    <h1>#Suppression... </h1>
+
+    <div class="row">
+        <div class="col-md m-auto">
+            <div class="card card-body">
+               <form method="POST">
+                {% csrf_token %}
+                    <div class="alert alert-danger" role="alert">
+                    Voulez vous bien supprimer cette matiere {{ matiere  }}
+                    </div>
+                    <button class="btn btn-danger" type="submit">Oui</button> 
+                    <a href="{% url 'matiere'  %}" class="btn btn-info">Non</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_etudiant_app %}
+
+
+{% comment %} 
+La var matiere de cette page va afficher le nomMatiere et le volumeHoraire comme on la definie dans la methede __self__ de models.py
+ {% endcomment %}
